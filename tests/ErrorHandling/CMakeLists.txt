@@ -1,21 +1,8 @@
-enable_language( Fortran )
-file ( COPY "${CMAKE_SOURCE_DIR}/data"
-    DESTINATION "${CMAKE_BINARY_DIR}/" )
-
-add_executable(example_username_section username_selection_driver.F90 username_selection.F90)
-
-target_compile_options(example_username_section PRIVATE -cpp -ffree-line-length-none -pedantic -Wimplicit-interface -Wunderflow -fbounds-check -fimplicit-none)
-target_compile_definitions(example_username_section PRIVATE ERROR_HANDLING  )
-
-target_link_libraries(example_username_section
-		ErrorHandling
-)
-
-
-add_test(
-		NAME
-		example_username_section
-		WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
-		COMMAND
-		$<TARGET_FILE:example_username_section>
-)
+include_directories($<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
+add_subdirectory(username_selection)
+add_subdirectory(unittest)
+add_subdirectory(nversion_algorithm)
+add_subdirectory(lin_solve)
+add_subdirectory(fragile_input)
+add_subdirectory(dbc_test)
+add_subdirectory(common_wrappers)

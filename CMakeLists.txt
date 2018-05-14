@@ -13,7 +13,7 @@ conan_basic_setup()
 #
 # Setup testing
 #
-#include (CTest)
+include (CTest)
 #find_package(GTest REQUIRED)
 #
 # exports

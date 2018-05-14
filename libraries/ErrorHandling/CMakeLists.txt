@@ -15,7 +15,8 @@ add_library(ErrorHandling
 
 add_library(${PROJECT_PREFIX}::ErrorHandling ALIAS ErrorHandling)
 
-target_compile_options(ErrorHandling PRIVATE -cpp -ffree-line-length-none -pedantic -Wimplicit-interface -Wunderflow -fbounds-check -fimplicit-none)
+target_compile_options(ErrorHandling PUBLIC -cpp -ffree-line-length-none -fimplicit-none)
+target_compile_definitions(ErrorHandling PUBLIC FC_NO_FINAL_SUPPORT FC_NO_ALLOCATABLE_DTCOMP FC_FIXED_LENGTH_CHARACTERSTRINGS ERROR_HANDLING )
 
 target_include_directories(ErrorHandling
 	PRIVATE
