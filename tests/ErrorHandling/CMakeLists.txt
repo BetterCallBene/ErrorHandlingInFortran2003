@@ -4,6 +4,7 @@ file ( COPY "${CMAKE_SOURCE_DIR}/data"
 
 add_executable(example_username_section username_selection_driver.F90 username_selection.F90)
 
+target_compile_options(example_username_section PRIVATE -cpp -ffree-line-length-none -pedantic -Wimplicit-interface -Wunderflow -fbounds-check -fimplicit-none)
 target_compile_definitions(example_username_section PRIVATE ERROR_HANDLING  )
 
 target_link_libraries(example_username_section
