@@ -17,6 +17,7 @@ class ErrorhandlingConan(ConanFile):
 		cmake.configure()
 		cmake.build()
 		cmake.install()
+		cmake.test()
 
 		# Explicit way:
 		# self.run('cmake %s/hello %s'

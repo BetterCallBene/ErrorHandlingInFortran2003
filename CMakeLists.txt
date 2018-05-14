@@ -29,7 +29,7 @@ add_subdirectory(libraries)
 #
 # tests
 #
-# add_subdirectory(tests)
+add_subdirectory(tests)
 
 #
 # install README.md
