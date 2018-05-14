@@ -1,5 +1,5 @@
 from conans import ConanFile, CMake, tools
-
+import os
 
 class ErrorhandlingConan(ConanFile):
 	name = "ErrorHandling"
