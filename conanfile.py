@@ -10,7 +10,11 @@ class ErrorhandlingConan(ConanFile):
 	settings = "os", "compiler", "build_type", "arch"
 	generators = "cmake"
 
-	exports_sources = ["*"]
+	scm = {
+         "type": "git",
+         "url": "auto",
+         "revision": "auto"
+    }
 
 	def build(self):
 		cmake = CMake(self)
